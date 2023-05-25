@@ -128,7 +128,7 @@ public final class PingRoundWatcher {
     weak var client: ACClient?
     var pingLimit: Int64 = 6
     var finish: Bool = false
-    var checksDelay: Float32 {
+    public var checksDelay: Float32 {
         get { Float32(_checksDelay) / 1_000_000 }
         set { _checksDelay = UInt32(newValue * 1_000_000) }
     }
