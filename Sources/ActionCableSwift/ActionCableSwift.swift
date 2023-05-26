@@ -32,9 +32,6 @@ public final class ACClient {
         self.options = options ?? ACClientOptions()
         setupWSCallbacks()
         pingRoundWatcher.client = self
-        if self.options.reconnect {
-            self.pingRoundWatcher.start()
-        }
     }
 
     public func addOnConnected(_ handler: @escaping (_ headers: [String: String]?) -> Void) {
@@ -190,19 +187,3 @@ public final class ACClient {
         pingRoundWatcher.setFinish(to: true)
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
